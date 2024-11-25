@@ -35,7 +35,7 @@
 
    ```bash
    git clone https://github.com/Alexandr893/TaskManager.git
-   cd task-manager
+   cd TaskManager
 
 2. Убедитесь, что у вас установлен PostgreSQL и доступны настройки подключения
 
