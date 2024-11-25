@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RequestMapping("/api/auth")
 public class AuthController {
+
     private IAuthService authService;
 
     @Operation(summary = "Регистрация пользователя/выдача ролей", description = "Регистрация пользователя")

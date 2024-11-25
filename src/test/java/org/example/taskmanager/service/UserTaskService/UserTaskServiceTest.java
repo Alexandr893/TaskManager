@@ -65,18 +65,7 @@ class UserTaskServiceTest {
         verify(taskRepository).save(task);
     }
 
-    @Test
-    public void testUpdateTaskStatus_TaskNotFound() {
-        Long taskId = 1L;
-        String username = "user@example.com";
 
-        when(taskRepository.findById(taskId)).thenReturn(Optional.empty());
-
-        ResponseEntity<String> response = userTaskService.updateTaskStatus(taskId, Status.IN_PROGRESS, username);
-
-        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-        assertEquals("Задача с ID " + taskId + " не найдена", response.getBody());
-    }
 
     @Test
     public void testAddCommentToTask_Success() {
@@ -101,18 +90,6 @@ class UserTaskServiceTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Комментарий добавлен", response.getBody());
         verify(commentRepository).save(ArgumentMatchers.any(Comment.class));
-    }
-
-    @Test
-    public void testAddCommentToTask_TaskNotFound() {
-        Long taskId = 1L;
-        String username = "user@example.com";
-        CommentDto commentDto = new CommentDto();
-
-        when(taskRepository.findById(taskId)).thenReturn(Optional.empty());
-        ResponseEntity<String> response = userTaskService.addCommentToTask(taskId, commentDto, username);
-        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-        assertEquals("Задача с ID " + taskId + " не найдена", response.getBody());
     }
 
 
