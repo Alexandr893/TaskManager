@@ -42,8 +42,8 @@
 
 3. Используйте Maven для сборки и запуска приложения
 
-   mvn clean install
-   mvn spring-boot:run
+   - mvn clean install
+   - mvn spring-boot:run
 
 ### Docker
 
