@@ -1,7 +1,10 @@
 package org.example.taskmanager.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.taskmanager.enums.Priority;
+import org.example.taskmanager.enums.Status;
 
 @Getter
 @Setter

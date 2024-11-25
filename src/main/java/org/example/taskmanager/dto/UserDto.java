@@ -1,5 +1,6 @@
 package org.example.taskmanager.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
